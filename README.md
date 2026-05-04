@@ -75,22 +75,13 @@ Analyses were developed in **R**.
 
 Required packages typically include:
 
-dplyr
-
-readxl
-
-ggplot2
-
-MASS
-
-stats
-
-FactoMineR
-
-factoextra
-
-cluster
-
+- dplyr
+- dunn.test
+- tidyr
+- readxl
+- ggplot2
+- MASS
+- cluster
 
 ## Notes
 
