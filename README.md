@@ -2,91 +2,96 @@
 
 ## Overview
 
-This repository contains the **statistical analysis pipeline** used for the volumetric network analyses reported in the manuscript:
+This repository contains the **statistical and machine learning analysis pipeline** used for the study:
 
 **Multimodal imaging and virtual brain modelling reveal the diversity of network changes in cerebellar ataxias**  
 submitted to *Brain Communications*.
 
-The code implements a **fully reproducible workflow** for group-level comparisons of brain volumes across functional networks.
+The repository provides a **fully reproducible workflow** integrating:
+
+- statistical analysis of brain volumes across functional networks
+- network-based regressions
+- dimensionality reduction using Principal Component Analysis (PCA)
+- unsupervised clustering analyses
+
+The analyses aim to characterise **network-level alterations** and identify data-driven patterns of heterogeneity across cerebellar ataxia patients.
 
 ---
 
-## Study Groups
+## Repository Structure
+├── volume_analysis.R # Example pipeline: regional/network volume analysis
+├── regression_analysis.R # Network-specific stepwise regression models
+├── pca_clustering.R # PCA dimensionality reduction and clustering
+└── README.md
 
-- **HC** – Healthy Controls  
-- **JS** – Joubert Syndrome  
-- **SP** – Slowly progressive ataxia 
 
----
+### Scripts
 
-## Data Types
+#### volume_analysis.R
+Example implementation of the statistical workflow applied to brain volume measures.
 
-- Regional brain volumes  
-- Network-level volumetric measures  
-
----
-
-## Networks Analyzed
-
-- Somatomotor Network  
-- Ventral Attention Network  
-
-The pipeline is **generalizable to other networks**.
+This script serves as a **template** for analysing additional feature sets (eg. graph metrics on SC and FC, TVB parameters).
 
 ---
 
-## Statistical Pipeline
+#### regression_analysis.R
+Performs **network-specific stepwise linear regression** analyses to investigate associations between imaging features and clinical variables.
 
-For each region / feature:
-
-- **Shapiro–Wilk test** for normality  
-- **One-way ANOVA** (normal data) or **Kruskal–Wallis** (non-normal data)  
-- **Post-hoc tests**:
-  - Tukey HSD (ANOVA)  
-  - Dunn test with Holm correction (Kruskal–Wallis)  
-- Significance threshold: **p < 0.05**  
-
-Only **significant regions** are visualized.
+Each functional network is analysed independently.
 
 ---
 
-## Reproducibility DA SISTEMARE!!!
+#### pca_clustering.R
+Implements a data-driven workflow including:
 
-Raw clinical data cannot be shared due to ethical restrictions.
-
-An **example dataset** is provided in:
-
-`example_data/example_volumes.xlsx`
-
----
-
-## Relationship to Full Study
-
-The same statistical pipeline was applied across all modalities in the study:
-
-- structural connectivity (SC) graph metrics  
-- functional connectivity (FC) graph metrics  
-- The Virtual Brain (TVB) parameters  
-- volumetric analyses  
-
-This repository provides a **representative implementation** of the full analytical framework.
+- feature normalisation
+- Principal Component Analysis (PCA)
+- dimensionality reduction
+- unsupervised clustering for patient stratification
 
 ---
 
-## Requirements
+## Data Requirements
 
-R (≥ 4.2)
+The repository does **not** include raw data.
 
-Packages:
-- ggplot2  
-- dplyr  
-- dunn.test  
-- readxl  
-- tidyr  
+Input datasets should contain:
+
+- subject identifiers
+- group labels
+- regional or network-derived metrics
+- clinical variables (when required)
+
+Data paths must be adapted locally within each script.
 
 ---
 
-## Run Analysis
+## Dependencies
 
-```r
-source("volume_analysis.R")
+Analyses were developed in **R**.
+
+Required packages typically include:
+
+tidyverse
+dplyr
+ggplot2
+stats
+FactoMineR
+factoextra
+cluster
+
+## Notes
+
+- The provided scripts illustrate the **analysis strategy**, not a fixed pipeline.
+- The same analytical framework can be reused across **multiple datasets and imaging modalities**.
+- The volume analysis is included as an **example implementation** of the general workflow.
+
+---
+
+## Citation
+
+If you use this code, please cite:
+
+**Gaviraghi et al.**  
+*Multimodal imaging and virtual brain modelling reveal the diversity of network changes in cerebellar ataxias*  
+*Brain Communications* (under review)
