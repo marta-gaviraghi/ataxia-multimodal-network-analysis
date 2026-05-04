@@ -75,13 +75,22 @@ Analyses were developed in **R**.
 
 Required packages typically include:
 
-tidyverse
 dplyr
+
+readxl
+
 ggplot2
+
+MASS
+
 stats
+
 FactoMineR
+
 factoextra
+
 cluster
+
 
 ## Notes
 
