@@ -1,4 +1,4 @@
-# Ataxia Multimodal Network Analysis – Volumetric Pipeline
+# Ataxia Multimodal Network Analysis
 
 ## Overview
 
