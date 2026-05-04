@@ -19,9 +19,9 @@ The analyses aim to characterise **network-level alterations** and identify data
 ---
 
 ## Repository Structure
-├── volume_analysis.R # Example pipeline: regional/network volume analysis
-├── regression_analysis.R # Network-specific stepwise regression models
-├── pca_clustering.R # PCA dimensionality reduction and clustering
+├── volume_analysis.R
+├── regression_analysis.R
+├── pca_clustering.R
 └── README.md
 
 
