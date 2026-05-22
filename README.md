@@ -62,7 +62,7 @@ Input datasets should contain:
 
 - subject identifiers
 - group labels
-- regional or network-derived metrics
+- network-derived metrics
 - clinical variables (when required)
 
 Data paths must be adapted locally within each script.
